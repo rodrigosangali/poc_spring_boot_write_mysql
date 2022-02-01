@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Produto {
@@ -13,11 +16,15 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "prod_nome", length = 200, nullable = false)
+	@Column(name = "prod_nome", length = 200)
+	@NotBlank
 	private String nome;
 	
+	@Min(0)
 	private Double preco;
 	
+	@Min(0)
+	@Max(1)
 	private Double desconto;
 	
 	public Produto() {

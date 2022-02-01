@@ -1,5 +1,7 @@
 package com.sangali.poc_spring_boot_write_mysql.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class ProdutoController {
 	private ProdutoRepository produtoRepository;
 	
 	@PostMapping
-	public @ResponseBody Produto novoProduto(Produto produto) {
+	public @ResponseBody Produto novoProduto(@Valid Produto produto) {
 		produtoRepository.save(produto);
 		return produto;
 	}
