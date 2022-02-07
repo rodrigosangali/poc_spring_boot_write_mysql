@@ -68,4 +68,9 @@ public class ProdutoController {
 		produtoRepository.deleteById(id);
 	}
 
+	@GetMapping(path = "/nome/{partNome}")
+	public Iterable<Produto> obterProdutosPorNome(@PathVariable String partNome){
+		return produtoRepository.searchByNameLike(partNome);
+	}
+	
 }
