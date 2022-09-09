@@ -1,4 +1,4 @@
-# poc_spring_boot_write_mysql
+# poc_spring_boot_write_mysql_JPA
 
 1 - Configurar um projeto Spring Boot https://start.spring.io/
 
